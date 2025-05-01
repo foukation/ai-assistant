@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="img_multimodal_dialog_form_camera">Take Photo</string>
+    <string name="img_multimodal_dialog_from_album">Pick from Gallery</string>
+    <string name="img_multimodal_dialog_cancel">Cancel</string>
+
+</resources>

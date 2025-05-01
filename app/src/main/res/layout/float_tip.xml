@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_online_temp_item_outer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="2dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:contentPadding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_weight="0"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/float1" />
+
+                <TextView
+                    android:id="@+id/tv_online_temp_item_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:text="显示在其他应用上层"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:id="@+id/tv_online_temp_item_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="建议允许显示在其他应用上层，不允许会导致悬浮球功能无法使用。"
+                    android:textColor="#8A8A8A"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_go_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:id="@+id/go_ignore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="忽略且不提示"
+                    android:gravity="start"
+                    android:textColor="#0c77ff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/go_open"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="去开启"
+                    android:gravity="end"
+                    android:textColor="#0c77ff"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/go_open_icon"
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:layout_weight="0"
+                    android:scaleType="centerInside"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/right_img_blue" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

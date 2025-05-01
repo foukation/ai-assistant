@@ -1,0 +1,77 @@
+buildscript {
+    ext {
+        kotlin_version = '1.7.10'
+    }
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'http://180.76.238.175:8081/repository/maven-public/'
+            allowInsecureProtocol = true
+        }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://dueros.baidu.com/maven/repository/maven-public/' }
+        maven { url "https://jitpack.io" }
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.8.10"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://developer.huawei.com/repo' }
+        maven { url 'https://developer.hihonor.com/repo' }
+        maven {
+            url 'http://180.76.238.175:8081/repository/maven-public/'
+            allowInsecureProtocol = true
+        }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://dueros.baidu.com/maven/repository/maven-public/' }
+        google()
+        mavenCentral()
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
+        }
+
+        tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+            kotlinOptions.jvmTarget = "11"
+        }
+
+        flatDir {
+            dirs '../glasses/libs','../app/libs','../multimodal/libs'
+        }
+    }
+
+    tasks.withType(Test) {
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+}
+
+ext {
+    compileSdkVersion = COMPILE_SDK_VERSION.toInteger()
+    buildSdkVersion = BUILD_SDK_VERSION.toString()
+    minSdkVersion = MIN_SDK_VERSION.toInteger()
+    targetSdkVersion = TARGET_SDK_VERSION.toInteger()
+    magicToolVersion = MAGIC_TOOL_VERSION
+    compileOptions = {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

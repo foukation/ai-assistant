@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6F7"
+    tools:context=".TabConfActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp">
+
+            <ImageButton
+                android:id="@+id/bt_back_conf"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0"
+                android:background="#00000000"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_btn" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/conf_activity_title"
+                android:textColor="#3C3C3C"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp"
+                    android:paddingBottom="10dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingBottom="5dp"
+                        app:contentPaddingLeft="20dp"
+                        app:contentPaddingRight="20dp"
+                        app:contentPaddingTop="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:divider="#C5C5C5"
+                            android:orientation="vertical"
+                            android:showDividers="middle">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_startup_check_access_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/conf_startup_check_access_item"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <Switch
+                                    android:id="@+id/sw_check_access_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:checked="false"
+                                    android:showText="false"
+                                    android:thumb="@drawable/switch_thumb"
+                                    android:track="@drawable/switch_track"
+                                    tools:checked="true"
+                                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_def_enable_chat_item"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_def_enable_chat_tip"
+                                        android:textColor="#6A6A6A"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <Switch
+                                    android:id="@+id/sw_def_enable_multi_chat_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:checked="false"
+                                    android:showText="false"
+                                    android:thumb="@drawable/switch_thumb"
+                                    android:track="@drawable/switch_track"
+                                    tools:checked="true"
+                                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_tts_enable_item"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_tts_enable_tip"
+                                        android:textColor="#6A6A6A"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <Switch
+                                    android:id="@+id/sw_tts_enable_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:checked="false"
+                                    android:showText="false"
+                                    android:thumb="@drawable/switch_thumb"
+                                    android:track="@drawable/switch_track"
+                                    tools:checked="true"
+                                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_auto_save_history_item"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_auto_save_history_tip"
+                                        android:textColor="#6A6A6A"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <Switch
+                                    android:id="@+id/sw_auto_save_history_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:checked="false"
+                                    android:showText="false"
+                                    android:thumb="@drawable/switch_thumb"
+                                    android:track="@drawable/switch_track"
+                                    tools:checked="true"
+                                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_limit_vision_size_item"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/conf_limit_vision_size_tip"
+                                        android:textColor="#6A6A6A"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <Switch
+                                    android:id="@+id/sw_limit_vision_size_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:checked="false"
+                                    android:showText="false"
+                                    android:thumb="@drawable/switch_thumb"
+                                    android:track="@drawable/switch_track"
+                                    tools:checked="true"
+                                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_model_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/setting_model"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/model_val"
+                                    android:layout_width="30dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="3dp"
+                                    android:text=""
+                                    android:textColor="#999"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView5"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/right_img" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_video_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/setting_video"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/video_val"
+                                    android:layout_width="30dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="3dp"
+                                    android:gravity="right"
+                                    android:text=""
+                                    android:textColor="#999"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView4"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/right_img" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="15dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_help_conf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/conf_help_item"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView3"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/right_img" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

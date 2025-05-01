@@ -1,0 +1,10 @@
+rootProject.name = "AI Assistant"
+include ':app'
+include ':glasses'
+
+include(":accessibility-api")
+include(":core")
+include(":intention")
+include(":easyfloat")
+
+include ':multimodal'

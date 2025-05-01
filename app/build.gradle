@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk 34
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.1"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    //签名使用的相关证书
+    signingConfigs {
+        release {
+            storeFile file('keystore.jks')
+            storePassword '123456'
+            keyAlias 'baidu'
+            keyPassword '123456'
+        }
+        debug {
+            storeFile file('keystore.jks')
+            storePassword '123456'
+            keyAlias 'baidu'
+            keyPassword '123456'
+        }
+    }
+
+    packagingOptions {
+        resources.excludes.add('META-INF/INDEX.LIST')
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/ASL2.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    android.applicationVariants.all{ variant ->
+        variant.outputs.all{
+            def createTime = new Date().format("YYYYMMddHHmm", TimeZone.getTimeZone("GMT+08:00"))
+            def fileName = "AIAssistant_${defaultConfig.versionName}_${createTime}.apk"
+            outputFileName = fileName
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation("com.xiaodu.magictool:magictool-core:${MAGIC_TOOL_VERSION}") {
+        changing = true
+    }
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    annotationProcessor 'io.noties:prism4j-bundler:2.0.0'
+    implementation group: 'com.unfbx', name: 'chatgpt-java', version: '1.1.5'
+
+    implementation("com.jakewharton.timber:timber:5.0.1")
+    implementation "com.google.code.gson:gson:${GSON_VERSION}"
+
+    implementation "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+    implementation "com.github.bumptech.glide:okhttp3-integration:${GLIDE_VERSION}"
+    implementation "com.github.bumptech.glide:recyclerview-integration:${GLIDE_VERSION}"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'
+    implementation("com.squareup.okhttp3:okhttp-sse:4.9.3")
+
+    // WebView
+    implementation 'com.github.xuexiangjys.AgentWeb:agentweb-core:1.0.0'
+    implementation 'com.github.xuexiangjys.AgentWeb:agentweb-download:1.0.0'
+    implementation 'com.github.xuexiangjys.AgentWeb:agentweb-filechooser:1.0.0'
+
+    /*implementation(name: 'glasses-SDK0.9.4.4_', ext: 'aar')
+    implementation(name: 'SDK2.1.11-Java32_T1', ext: 'aar')*/
+
+    implementation 'com.github.gzu-liyujiang:Android_CN_OAID:4.2.11'
+    implementation "com.huawei.hms:ads-identifier:3.4.62.300"
+    implementation 'com.hihonor.mcs:ads-identifier:1.0.2.301'
+    implementation("com.squareup.picasso:picasso:2.71828")
+
+    api(project(":accessibility-api"))
+    api(project(":core"))
+    api(project(":intention"))
+    api(project(":easyfloat"))
+    api(project(":multimodal"))
+    implementation 'com.airbnb.android:lottie:6.1.0'
+}

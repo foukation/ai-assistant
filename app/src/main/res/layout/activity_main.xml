@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_main_base"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:id="@+id/view_bg_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.skythinker.gptassistant.view.ResizableLinearLayout
+            android:id="@+id/chat_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_card_background"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:paddingStart="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_image_preview"
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="74dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/line"
+
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_new_chat"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:foreground="@drawable/new_chat_btn"
+                    app:cardBackgroundColor="#00DADADA"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_tts_off"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="#FFFFFF"
+                    android:foreground="@drawable/tts_off"
+                    app:cardBackgroundColor="#00DADADA"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    android:visibility="gone"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/history_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="#FFFFFF"
+                    android:foreground="@drawable/history_btn"
+                    app:cardBackgroundColor="#00DADADA"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_shrink"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="#FFFFFF"
+                    android:foreground="@drawable/sx"
+                    app:cardBackgroundColor="#00DADADA"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#33A5A5A5" />
+
+            <ScrollView
+                android:id="@+id/sv_chat_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="60dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_chat_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="360dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_chat_notice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:text="@string/default_greeting"
+                        android:textColor="#000000"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+            </ScrollView>
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:cardBackgroundColor="#0C000000"-->
+<!--                app:cardCornerRadius="10dp"-->
+<!--                app:cardElevation="0dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_template_params"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:divider="#C5C5C5"-->
+<!--                    android:dividerPadding="10dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:showDividers="middle" />-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+        </com.skythinker.gptassistant.view.ResizableLinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:contentPadding="0dp"
+            app:strokeColor="@android:color/holo_blue_dark"
+            app:strokeWidth="2dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+                <ImageButton
+                    android:id="@+id/bt_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/appicon" />
+                <EditText
+                    android:id="@+id/et_user_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left|center"
+                    android:background="@color/transparent"
+                    android:hint="@string/text_input_hint"
+                    android:inputType="textMultiLine"
+                    android:maxHeight="150dp"
+                    android:textColorHint="#838383"
+                    android:textSize="15sp" />
+                <ImageButton
+                    android:id="@+id/bt_image"
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:scaleType="center"
+                    android:src="@mipmap/image" />
+                <com.skythinker.gptassistant.view.CustomImageButton
+                    android:id="@+id/bt_send"
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:scaleType="center"
+                    android:src="@mipmap/voice_ic" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="left"
+            app:lottie_fileName="lister.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
